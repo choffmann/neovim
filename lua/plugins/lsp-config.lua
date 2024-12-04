@@ -56,7 +56,7 @@ return {
         lua_ls = {
           capabilities = capabilities,
         },
-        tsserver = {
+        ts_ls = {
           capabilities = capabilities,
           settings = {
             typescript = {
@@ -174,6 +174,7 @@ return {
         "eslint_d", -- Used to lint JavaScript code
         "beautysh", -- Used to format shell scripts
 				"golangci-lint",
+        "shellcheck", -- Used to lint shell scripts
       })
       require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
