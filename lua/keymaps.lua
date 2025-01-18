@@ -53,6 +53,8 @@ vim.keymap.set(
 	{ desc = "Decrypt k8s base64 keys" }
 )
 
+vim.keymap.set("n", "<A-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>", { desc = "Open tmux-sessionizer" })
+
 vim.api.nvim_create_user_command("W", "w", {})
 vim.api.nvim_create_user_command("Wa", "wa", {})
 vim.api.nvim_create_user_command("Wqa", "wqa", {})
