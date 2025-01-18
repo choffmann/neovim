@@ -117,7 +117,7 @@ return {
 					settings = {
 						nixd = {
 							nixpkgs = {
-								expr = "import <nixpkgs> { }",
+								expr = 'import (builtins.getFlake "github:choffmann/nixos-config").inputs.nixpkgs { }',
 							},
 							formatting = {
 								command = { "alejandra" },
