@@ -22,10 +22,10 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Move up half a page" })
 
 vim.keymap.set("n", "n", "nzzzv", { desc = "Move to next search result and center it" })
 vim.keymap.set("n", "<leader>zig", "<cmd>LspRestart<cr>", { desc = "Restart the LSP server" })
-vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "Paste from system clipboard" })
-vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Yank to system clipboard" })
-vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = "Yank to system clipboard" })
-vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], { desc = "Delete without yanking" })
+vim.keymap.set({ "n", "v" }, "<leader>p", '"_dP', { desc = "Paste from system clipboard" })
+vim.keymap.set({ "n", "v" }, "<leader>y", '"+y', { desc = "Yank to system clipboard" })
+vim.keymap.set("n", "<leader>Y", '"+Y', { desc = "Yank to system clipboard" })
+vim.keymap.set({ "n", "v" }, "<leader>d", '"_d', { desc = "Delete without yanking" })
 
 vim.keymap.set(
 	"n",
