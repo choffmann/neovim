@@ -112,6 +112,7 @@ return {
 					},
 				},
 				rust_analyzer = {},
+				zls = {},
 				nixd = {
 					cmd = { "nixd" },
 					settings = {

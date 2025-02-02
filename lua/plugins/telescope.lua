@@ -65,6 +65,10 @@ return {
 		vim.keymap.set("n", "<leader>st", builtin.colorscheme, { desc = "[S]earch [T]hemes" })
 		vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "[ ] Find existing buffers" })
 
+		vim.api.nvim_create_user_command("FindConfig", function()
+			builtin.find_files({ cwd = vim.fn.stdpath("config") })
+		end, { desc = "[S]earch [N]eovim files" })
+
 		vim.keymap.set("n", "<leader>/", function()
 			builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
 				winblend = 10,
@@ -79,8 +83,6 @@ return {
 			})
 		end, { desc = "[S]earch [/] in Open Files" })
 
-		vim.keymap.set("n", "<leader>sn", function()
-			builtin.find_files({ cwd = vim.fn.stdpath("config") })
-		end, { desc = "[S]earch [N]eovim files" })
+		vim.keymap.set("n", "<leader>sn", "<cmd>FindConfig<cr>", { desc = "[S]earch [N]eovim files" })
 	end,
 }
