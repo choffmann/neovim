@@ -79,7 +79,6 @@ return {
 					},
 				},
 				ts_ls = {
-					filetypes = { "javascript", "typescript" },
 					settings = {
 						inlayHints = {
 							includeInlayEnumMemberValueHints = true,
