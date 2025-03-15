@@ -34,7 +34,8 @@ return { -- Autoformat
 			lua = { "stylua" },
 			go = { "gofmt" },
 			nix = { "alejandra" },
-			javascript = { "prettierd", "prettier", stop_after_first = true },
+			markdown = { "prettierd", "markdownlint-cli2", "markdown-toc" },
+			javascript = { "prettierd", stop_after_first = true },
 		},
 	},
 }
