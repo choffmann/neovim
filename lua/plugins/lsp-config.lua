@@ -149,18 +149,22 @@ return {
 					settings = {
 						nixd = {
 							nixpkgs = {
-								expr = 'import (builtins.getFlake "github:choffmann/nixos-config").inputs.nixpkgs { }',
+								expr = "import <nixpkgs> { }",
 							},
 							formatting = {
 								command = { "alejandra" },
 							},
 							options = {
 								nixos = {
-									expr = "(builtins.getFlake (github:choffmann/nixos-config)).nixosConfigurations",
+									expr = '(builtins.getFlake ("git+file://" + "/home/choffmann/nixos-config")).nixosConfigurations.'
+										.. vim.fn.hostname()
+										.. ".options",
 								},
-								home_manager = {
-									expr = "(builtins.getFlake (github:choffmann/nixos-config)).homeConfigurations",
-								},
+								-- home_manager = {
+								-- 	expr = "(import <home-manager/modules> { configuration = /home/choffmann/nixos-config/home/choffmann/"
+								-- 		.. vim.fn.hostname()
+								-- 		.. ".nix; pkgs = import <nixpkgs> {}; }).options",
+								-- },
 							},
 						},
 					},
