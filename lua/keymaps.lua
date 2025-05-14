@@ -59,3 +59,11 @@ vim.api.nvim_create_user_command("W", "w", {})
 vim.api.nvim_create_user_command("Wa", "wa", {})
 vim.api.nvim_create_user_command("Wqa", "wqa", {})
 vim.api.nvim_create_user_command("Q", "q", {})
+
+vim.keymap.set("n", "[d", function()
+	vim.diagnostic.jump({ count = 1, float = true })
+end, { desc = "Go to previous [D]iagnostic message" })
+
+vim.keymap.set("n", "]d", function()
+	vim.diagnostic.jump({ count = -1, float = true })
+end, { desc = "Go to next [D]iagnostic message" })
