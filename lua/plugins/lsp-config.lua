@@ -90,6 +90,10 @@ return {
 						end, "[T]oggle Inlay [H]ints")
 					end
 				end,
+
+				vim.diagnostic.config({
+					virtual_text = true,
+				}),
 			})
 			local capabilities = require("blink.cmp").get_lsp_capabilities()
 
