@@ -173,6 +173,7 @@ return {
 						},
 					},
 				},
+				astro = {},
 				tailwindcss = {
 					init_options = {
 						userLanguages = {
