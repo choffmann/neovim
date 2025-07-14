@@ -1,6 +1,6 @@
 return { -- Autoformat
 	"stevearc/conform.nvim",
-	event = { "BufWritePre" },
+	event = { "BufWritePre", "BufNewFile" },
 	cmd = { "ConformInfo" },
 	keys = {
 		{
@@ -34,8 +34,15 @@ return { -- Autoformat
 			lua = { "stylua" },
 			go = { "gofmt" },
 			nix = { "alejandra" },
-			markdown = { "prettierd", "markdownlint-cli2", "markdown-toc" },
-			javascript = { "prettierd", stop_after_first = true },
+			markdown = { "prettier", "markdownlint-cli2", "markdown-toc" },
+			javascript = { "prettier" },
+			typescript = { "prettier" },
+			javascriptreact = { "prettier" },
+			typescriptreact = { "prettier" },
+			css = { "prettier" },
+			html = { "prettier" },
+			json = { "prettier" },
+			yaml = { "prettier" },
 		},
 	},
 }
