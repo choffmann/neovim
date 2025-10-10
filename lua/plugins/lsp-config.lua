@@ -145,6 +145,13 @@ return {
 				},
 				rust_analyzer = {
 					cmd = { "rust-analyzer" },
+					settings = {
+						["rust-analyzer"] = {
+							cargo = {
+								features = "all",
+							},
+						},
+					},
 				},
 				zls = {},
 				marksman = {},
@@ -207,7 +214,8 @@ return {
 
 			for name, server in pairs(servers) do
 				server.capabilities = capabilities
-				require("lspconfig")[name].setup(server)
+				vim.lsp.config(name, server)
+				vim.lsp.enable(name)
 			end
 		end,
 	},
