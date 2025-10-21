@@ -210,6 +210,7 @@ return {
 						},
 					},
 				},
+				tinymist = {},
 			}
 
 			for name, server in pairs(servers) do
