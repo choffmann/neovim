@@ -31,6 +31,7 @@ return { -- Autoformat
 			}
 		end,
 		formatters_by_ft = {
+			typst = { "typstyle" },
 			lua = { "stylua" },
 			go = { "gofmt" },
 			nix = { "alejandra" },
