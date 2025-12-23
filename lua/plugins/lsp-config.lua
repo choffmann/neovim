@@ -2,7 +2,17 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
-			{ "j-hui/fidget.nvim", opts = {} },
+			{
+				"j-hui/fidget.nvim",
+				opts = {
+					notification = {
+						window = {
+							winblend = 0,
+							normal_hl = "Normal",
+						},
+					},
+				},
+			},
 			{ "towolf/vim-helm", ft = "helm" },
 			{
 				"folke/lazydev.nvim",
