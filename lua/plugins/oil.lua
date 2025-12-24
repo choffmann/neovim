@@ -5,6 +5,13 @@ return {
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
 		require("oil").setup({
+			float = {
+				border = "rounded",
+				win_options = {
+					winblend = 0,
+					winhighlight = "Normal:OilFloat,NormalFloat:OilFloat",
+				},
+			},
 			view_options = {
 				show_hidden = true,
 			},

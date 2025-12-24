@@ -42,7 +42,7 @@ return {
 		vim.api.nvim_set_hl(0, "CursorLineNr", { fg = colors.base0B, bold = true, bg = "NONE" })
 		vim.api.nvim_set_hl(0, "LineNr", { fg = colors.base04, bg = "NONE" })
 		vim.api.nvim_set_hl(0, "Comment", { fg = colors.base06, italic = true })
-		vim.api.nvim_set_hl(0, "Visual", { bg = colors.base02 })
+		vim.api.nvim_set_hl(0, "Visual", { bg = colors.base01 })
 		vim.api.nvim_set_hl(0, "Folded", { bg = "NONE" })
 		vim.api.nvim_set_hl(0, "FoldColumn", { bg = "NONE" })
 		vim.api.nvim_set_hl(0, "VertSplit", { bg = "NONE" })
@@ -84,6 +84,15 @@ return {
 		vim.api.nvim_set_hl(0, "WhichKeyValue", { bg = colors.base01 })
 		vim.api.nvim_set_hl(0, "WhichKeySeparator", { fg = colors.base04, bg = colors.base01 })
 		vim.api.nvim_set_hl(0, "WhichKeyFloat", { bg = colors.base01 })
+
+		-- Oil
+		vim.api.nvim_set_hl(0, "OilFloat", { bg = colors.base01 })
+		vim.api.nvim_set_hl(0, "OilDir", { fg = colors.base0D, bg = colors.base01 })
+		vim.api.nvim_set_hl(0, "OilFile", { bg = colors.base01 })
+		vim.api.nvim_set_hl(0, "OilNormal", { bg = colors.base01 })
+		vim.api.nvim_set_hl(0, "OilNormalNC", { bg = colors.base01 })
+		vim.api.nvim_set_hl(0, "OilBorder", { fg = colors.base04, bg = colors.base01 })
+		vim.api.nvim_set_hl(0, "OilTitle", { fg = colors.base0D, bg = colors.base01 })
 
 		-- Telescope
 		vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = colors.base01 })
