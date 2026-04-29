@@ -100,11 +100,12 @@ return {
 						end, "[T]oggle Inlay [H]ints")
 					end
 				end,
-
-				vim.diagnostic.config({
-					virtual_text = true,
-				}),
 			})
+
+			vim.diagnostic.config({
+				virtual_text = true,
+			})
+
 			local capabilities = require("blink.cmp").get_lsp_capabilities()
 
 			local servers = {
@@ -221,6 +222,19 @@ return {
 					},
 				},
 				tinymist = {},
+				kotlin_language_server = {
+					filetypes = { "kotlin" },
+					init_options = {
+						storagePath = vim.fn.stdpath("state") .. "/kotlin-language-server",
+					},
+					settings = {
+						kotlin = {
+							scripts = {
+								enabled = true,
+							},
+						},
+					},
+				},
 			}
 
 			for name, server in pairs(servers) do
