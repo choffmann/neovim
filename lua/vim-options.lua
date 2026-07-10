@@ -1,7 +1,3 @@
--- Add stylix colors path
-vim.opt.rtp:append(vim.fn.stdpath("data"))
-package.path = package.path .. ";" .. vim.fn.stdpath("data") .. "/lua/?.lua"
-
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
