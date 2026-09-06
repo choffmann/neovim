@@ -1,3 +1,5 @@
+local flake = vim.env.NH_FLAKE or (vim.env.HOME .. "/nixos-config")
+
 return {
 	settings = {
 		nixd = {
@@ -9,7 +11,9 @@ return {
 			},
 			options = {
 				nixos = {
-					expr = '(builtins.getFlake ("git+file://" + "/home/choffmann/nixos-config")).nixosConfigurations.'
+					expr = '(builtins.getFlake "git+file://'
+						.. flake
+						.. '").nixosConfigurations.'
 						.. vim.fn.hostname()
 						.. ".options",
 				},

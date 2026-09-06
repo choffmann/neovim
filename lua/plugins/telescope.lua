@@ -15,9 +15,6 @@ return {
 		-- Useful for getting pretty icons, but requires a Nerd Font.
 		{ "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
 
-		-- Live grep with args
-		{ "nvim-telescope/telescope-live-grep-args.nvim" },
-
 		-- A telescope.nvim extension that offers intelligent prioritization when selecting files from your editing history.
 		{ "nvim-telescope/telescope-frecency.nvim" },
 
@@ -28,14 +25,16 @@ return {
 				return vim.fn.executable("manix") == 1
 			end,
 		},
-
-		{ "kdheepak/lazygit.nvim" },
 	},
 	config = function()
 		require("telescope").setup({
+			defaults = {
+				preview = true,
+			},
 			pickers = {
-				previewer = false,
 				colorscheme = {
+					-- opt back in, the global `preview = false` would kill it
+					preview = true,
 					enable_preview = true,
 				},
 			},
@@ -50,7 +49,6 @@ return {
 		pcall(require("telescope").load_extension, "ui-select")
 		pcall(require("telescope").load_extension, "frecency")
 		pcall(require("telescope").load_extension, "manix")
-		pcall(require("telescope").load_extension, "lazygit")
 
 		local builtin = require("telescope.builtin")
 		vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [H]elp" })

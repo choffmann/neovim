@@ -39,10 +39,6 @@ return {
 			gitsigns.stage_buffer()
 		end, { desc = "git [S]tage buffer" })
 
-		vim.keymap.set("n", "<leader>hu", function()
-			gitsigns.undo_stage_hunk()
-		end, { desc = "git [u]ndo stage hunk" })
-
 		vim.keymap.set("n", "<leader>hR", function()
 			gitsigns.reset_buffer()
 		end, { desc = "git [R]eset buffer" })

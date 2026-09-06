@@ -9,7 +9,6 @@ return {
 		"mfussenegger/nvim-dap", -- (optional) only if you use `gopher.dap`
 	},
 	-- deps (gomodifytags, gotests, impl, iferr) are installed via nix
-	opts = {},
 	config = function()
 		require("gopher").setup({
 			commands = {

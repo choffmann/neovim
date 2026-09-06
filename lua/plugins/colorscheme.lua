@@ -38,11 +38,11 @@ return {
 		vim.o.winblend = 30
 
 		-- better visibility with transparent bg
-		vim.api.nvim_set_hl(0, "CursorLine", { bg = "#282838" })
+		vim.api.nvim_set_hl(0, "CursorLine", { bg = colors.base01 })
 		vim.api.nvim_set_hl(0, "CursorLineNr", { fg = colors.base0B, bold = true, bg = "NONE" })
 		vim.api.nvim_set_hl(0, "LineNr", { fg = colors.base04, bg = "NONE" })
 		vim.api.nvim_set_hl(0, "Comment", { fg = colors.base06, italic = true })
-		vim.api.nvim_set_hl(0, "Visual", { bg = colors.base01 })
+		vim.api.nvim_set_hl(0, "Visual", { bg = colors.base02 })
 		vim.api.nvim_set_hl(0, "Folded", { bg = "NONE" })
 		vim.api.nvim_set_hl(0, "FoldColumn", { bg = "NONE" })
 		vim.api.nvim_set_hl(0, "VertSplit", { bg = "NONE" })
@@ -108,14 +108,6 @@ return {
 		vim.api.nvim_set_hl(0, "TelescopePreviewTitle", { fg = colors.base0E, bg = colors.base01 })
 		vim.api.nvim_set_hl(0, "TelescopeSelection", { bg = colors.base02 })
 
-		-- mini.ai and mini.surround
 		require("mini.ai").setup({ n_lines = 500 })
-		require("mini.surround").setup()
-
-		local statusline = require("mini.statusline")
-		statusline.setup({ use_icons = vim.g.have_nerd_font })
-		statusline.section_location = function()
-			return "%2l:%-2v"
-		end
 	end,
 }
