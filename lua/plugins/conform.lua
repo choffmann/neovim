@@ -34,7 +34,7 @@ return { -- Autoformat
 			typst = { "typstyle" },
 			lua = { "stylua" },
 			go = { "gofmt" },
-			nix = { "alejandra" },
+			nix = { "nixfmt" },
 			markdown = { "prettierd", "markdownlint-cli2", "markdown-toc" },
 			javascript = { "prettierd" },
 			typescript = { "prettierd" },
