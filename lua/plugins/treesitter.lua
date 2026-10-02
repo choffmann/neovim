@@ -67,6 +67,16 @@ return {
 
 		nts.install(parsers)
 
+		-- install() treats a language as present once its parser exists, so
+		-- missing queries (e.g. after an interrupted install) are never repaired.
+		local installed_queries = nts.get_installed("queries")
+		local missing_queries = vim.tbl_filter(function(lang)
+			return not vim.list_contains(installed_queries, lang)
+		end, nts.get_installed("parsers"))
+		if #missing_queries > 0 then
+			nts.install(missing_queries, { force = true })
+		end
+
 		-- Auto-install on first encounter of an unknown filetype.
 		local available = {}
 		for _, p in ipairs(nts.get_available()) do
