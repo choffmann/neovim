@@ -41,6 +41,7 @@ return {
 		vim.lsp.enable({
 			"ansiblels",
 			"astro",
+			"bashls",
 			"gopls",
 			"jsonls",
 			"kotlin_language_server",

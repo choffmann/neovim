@@ -32,6 +32,8 @@ return { -- Autoformat
 		end,
 		formatters_by_ft = {
 			typst = { "typstyle" },
+			sh = { "shfmt" },
+			bash = { "shfmt" },
 			lua = { "stylua" },
 			go = { "gofmt" },
 			nix = { "nixfmt" },
