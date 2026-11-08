@@ -45,7 +45,24 @@ vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
 
-vim.filetype.add({ extension = { kts = "kotlin" } })
+vim.filetype.add({
+	extension = {
+		kts = "kotlin",
+		-- builtin detection falls back to TinyFugue ("tf") for empty files
+		tf = "terraform",
+	},
+	pattern = {
+		[".*playbook.*%.ya?ml"] = "yaml.ansible",
+		[".*/playbooks/.*%.ya?ml"] = "yaml.ansible",
+		[".*/roles/[^/]+/tasks/.*%.ya?ml"] = "yaml.ansible",
+		[".*/roles/[^/]+/handlers/.*%.ya?ml"] = "yaml.ansible",
+		[".*/roles/[^/]+/defaults/.*%.ya?ml"] = "yaml.ansible",
+		[".*/roles/[^/]+/vars/.*%.ya?ml"] = "yaml.ansible",
+		[".*/roles/[^/]+/meta/.*%.ya?ml"] = "yaml.ansible",
+		[".*/group_vars/.*"] = "yaml.ansible",
+		[".*/host_vars/.*"] = "yaml.ansible",
+	},
+})
 
 -- Highlight when yanking (copying) text
 vim.api.nvim_create_autocmd("TextYankPost", {

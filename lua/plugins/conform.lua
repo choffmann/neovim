@@ -44,6 +44,9 @@ return { -- Autoformat
 			html = { "prettierd" },
 			json = { "prettierd" },
 			yaml = { "prettierd" },
+			terraform = { "tofu_fmt" },
+			["terraform-vars"] = { "tofu_fmt" },
+			hcl = { "tofu_fmt" },
 		},
 	},
 }

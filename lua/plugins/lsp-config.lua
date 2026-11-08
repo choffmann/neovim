@@ -39,6 +39,7 @@ return {
 		})
 
 		vim.lsp.enable({
+			"ansiblels",
 			"astro",
 			"gopls",
 			"jsonls",
@@ -48,6 +49,7 @@ return {
 			"nixd",
 			"rust_analyzer",
 			"tailwindcss",
+			"terraformls",
 			"tinymist",
 			"ts_ls",
 			"yamlls",
